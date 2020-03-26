@@ -47,17 +47,18 @@ $(document).ready(function() {
 							}
 							info = info.replace('*', re);
 							submitres.html(info)
-						} 
+						}
+						$('.modal').modal({
+							onDeny: function(){
+						    	return true;
+						    },
+						    onApprove: function() {
+						    	return true
+						    }
+						}).modal('show');
 					}
 				})
-				$('.modal').modal({
-					onDeny: function(){
-				    	return true;
-				    },
-				    onApprove: function() {
-				    	return true
-				    }
-				}).modal('show');
+				
 			}, 1000)
 			
 		}
