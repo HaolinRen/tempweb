@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>股市预测</title>
+	<link rel="stylesheet" type="text/css" href="style/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="style/local.css">
+</head>
+<body>
+	
+    <div class="ui center aligned segment" id="board">
+        <div class="ui message">
+            <div class="header">
+            请根据昨日（
+            <label id="date0"></label>
+            ）沪深300指数收盘价<label id="price0"></label>
+            预测下周（
+            <label class="date1"></label> 至 <label class="date2"></label>
+            ）的沪深300指数收盘价所在区间。
+            </div>
+            <p>下表第一列为沪深300在未来一周的涨跌幅区间，即
+                (<label class="date2"></label>
+            的沪深300指数收盘价 <strong>-</strong>
+            <label class="date1"></label>
+            的沪深300指数收盘价) /
+            <label class="date1"></label>
+            的沪深300指数收盘价；第二列是根据该幅度计算的对应收盘价区间。请在下表中点击你的预测。</p>
+        </div>
+        <table class="ui selectable celled definition table">
+          <thead>
+            <tr class="center aligned">
+                <th></th>
+                <th>周涨跌幅区间</th>
+                <th>对应的沪深300收盘价区间</th>
+            </tr>
+          </thead>
+          <tbody id="ptable">
+            
+          </tbody>
+        </table>
+        <div class="ui segment" id="submitPane">
+            <div class="ui input">
+                <input type="text" placeholder="输入学号..." id="idinput">
+            </div>
+            <div class="ui input">
+                <input type="text" placeholder="输入姓名..." id="nameinput">
+            </div>
+            <button class="ui blue button" id="submit">提交</button>
+        </div>
+    </div>
+    <div class="ui modal">
+      <div class="header">提交成功！</div>
+      <div class="content" id="subres">
+        
+      </div>
+      <div class="actions">
+        <div class="ui orange cancel button">重新选择</div>
+        <div class="ui blue approve button">OK</div>
+      </div>
+    </div>
+
+    <script src="scripts/lib/jquery.min.js"></script>
+    <script src="scripts/lib/semantic.min.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
